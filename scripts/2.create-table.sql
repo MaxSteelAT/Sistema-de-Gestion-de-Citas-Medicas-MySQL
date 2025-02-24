@@ -4,14 +4,14 @@ use sistemadegestiondecitasmedicas;
 
 create table Pacientes (
   id int not null primary key,
-  name varchar(255),
+  nombre varchar(255),
   edad int,
   telefono varchar(20)
 );
 
 create table Doctores (
   id int not null primary key,
-  name varchar(255),
+  nombre varchar(255),
   especialidad varchar(255)
 );
 
