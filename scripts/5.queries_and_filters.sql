@@ -10,6 +10,7 @@ FROM citas
 WHERE fecha > CURDATE() 
 ORDER BY fecha ASC;
 
+--Nota:
 --Buscar las citas por fecha y ordenar por la hora:
 SELECT * 
 FROM citas 
@@ -21,3 +22,8 @@ SELECT * FROM doctores
 WHERE nombre = 'Julieta Perez';
 
 -- Listar pacientes que tengan una cita con un doctor de 'Cardiología'. (JOIN)
+SELECT pacientes.nombre as Paciente, pacientes.edad, citas.fecha as 'Fecha de la cita', citas.motivo, doctores.nombre as Doctor, doctores.especialidad
+FROM citas
+INNER JOIN pacientes ON citas.paciente_id = pacientes.id
+INNER JOIN doctores ON citas.doctor_id = doctores.id
+WHERE doctores.especialidad = 'cardiologo';
